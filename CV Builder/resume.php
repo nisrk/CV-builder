@@ -64,11 +64,14 @@
       $education = $_POST['education'];
       $experience = $_POST['experience'];
       $skills = $_POST['skills'];
-      
+      $picture=$_FILES['picture']['name'];
+      $tmp_name=$_FILES['picture']['tmp_name'];
+      $folder="images/".$picture;
+      $pc=move_uploaded_file($tmp_name, $folder);
       ?>
 
 <div id="resume">
-  <img src="img.jpeg">
+  <img src="echo $pc;">
   <h1><?php echo $name; ?></h1>
   <h2>Personal Information</h2>
   <p>Age: <?php echo $age; ?></p>
